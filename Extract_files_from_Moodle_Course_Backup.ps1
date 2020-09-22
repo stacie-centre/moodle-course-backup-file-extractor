@@ -15,7 +15,7 @@
 
 $MoodleBackupDir = "C:\Extracted-moodle-course-backup"
 
-$xml = [xml](Get-Content $MoodleBackupDir + "files.xml")
+$xml = [xml](Get-Content "$MoodleBackupDir\files.xml")
 
 $xml.SelectNodes("files/file") | Where-Object -Property component -eq "mod_folder" | ForEach-Object {
     
